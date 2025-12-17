@@ -252,7 +252,7 @@ function wireTipSheet() {
       // Lazy-load tip module (ONLY here)
       let tip;
       try {
-        tip = await import("https://nurrabby.com/tip.js");
+        tip = await import("https://proof-of-walk-ten.vercel.app//tip.js");
       } catch {
         setTipPhase("idle");
         $tipCta.disabled = false;
@@ -294,8 +294,8 @@ function wireTipSheet() {
 
 function boot() {
   // Don’t kill UI outside domain; just warn.
-  if (location.origin !== "https://nurrabby.com") {
-    toast("Domain mismatch. Expected https://nurrabby.com", "err");
+  if (location.origin !== "https://proof-of-walk-ten.vercel.app/") {
+    toast("Domain mismatch. Expected https://proof-of-walk-ten.vercel.app/", "err");
   }
 
   $status.textContent = "READY";
