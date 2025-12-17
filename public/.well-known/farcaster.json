@@ -1,17 +1,17 @@
 {
   "accountAssociation": {
-    "header": " ",
-    "payload": " ",
-    "signature": " "
+    "header": "eyJmaWQiOjE0MTU3NzUsInR5cGUiOiJjdXN0b2R5Iiwia2V5IjoiMHhDYTZjMERBNDRFMjBCMkYwMUY5YTYwYjE0RjkzNTE3NUQ1NkU5MWNBIn0",
+    "payload": "eyJkb21haW4iOiJwcm9vZi1vZi13YWxrLXRlbi52ZXJjZWwuYXBwIn0",
+    "signature": "ouvanmWpfZOg9RfKTg0Jll2N8Uh1gqZQHkWIG/CnyHsh/Eyqn9NOozTH3pkrlrhNbRuOSUTImy6jdh5kbKkGvBw="
   },
   "miniapp": {
     "version": "1",
     "name": "Proof of Walk",
-    "iconUrl": "https://nurrabby.com/assets/icon-1024.png",
-    "homeUrl": "https://nurrabby.com/",
-    "imageUrl": "https://nurrabby.com/assets/embed-3x2.png",
+    "iconUrl": "https://proof-of-walk-ten.vercel.app/assets/icon-1024.png",
+    "homeUrl": "https://proof-of-walk-ten.vercel.app/",
+    "imageUrl": "https://proof-of-walk-ten.vercel.app/assets/embed-3x2.png",
     "buttonTitle": "Open",
-    "splashImageUrl": "https://nurrabby.com/assets/splash-200.png",
+    "splashImageUrl": "https://proof-of-walk-ten.vercel.app/assets/splash-200.png",
     "splashBackgroundColor": "#000000"
   }
 }
