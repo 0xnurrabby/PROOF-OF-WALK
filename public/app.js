@@ -1,6 +1,6 @@
 // Proof of Walk — Farcaster Mini App (static, no framework)
 //
-// DOMAIN: https://nurrabby.com
+// DOMAIN: https://proof-of-walk-ten.vercel.app/
 // PRIMARY_ROUTE: /
 //
 // Tip: USDC on Base via ERC-5792 wallet_sendCalls with builder code attribution.
@@ -8,8 +8,8 @@
 import { Attribution } from "https://esm.sh/ox/erc8021";
 
 const USDC_CONTRACT = "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913";
-const RECIPIENT = "0x8Bc0C8DB6e6b48cA38B4a8875C559E890f3Fc355";
-const BUILDER_CODE = "nurrabby-proof-of-walk-001";
+const RECIPIENT = "0x5eC6AF0798b25C563B102d3469971f1a8d598121";
+const BUILDER_CODE = "bc_t4gtym55";
 
 const dataSuffix = Attribution.toDataSuffix({
   codes: [BUILDER_CODE],
