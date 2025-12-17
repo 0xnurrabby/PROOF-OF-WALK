@@ -1,5 +1,5 @@
 // tip.js — isolated tip module (lazy-loaded)
-// DOMAIN: https://nurrabby.com
+// DOMAIN: https://proof-of-walk-ten.vercel.app/
 //
 // Requirements covered:
 // - Import Attribution EXACTLY from esm.sh
