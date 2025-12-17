@@ -295,7 +295,7 @@ function wireTipSheet() {
 function boot() {
   // Don’t kill UI outside domain; just warn.
   if (location.origin !== "https://proof-of-walk-ten.vercel.app/") {
-    toast("Domain mismatch. Expected https://proof-of-walk-ten.vercel.app/", "err");
+    toast("Hi Mate!!", "err");
   }
 
   $status.textContent = "READY";
