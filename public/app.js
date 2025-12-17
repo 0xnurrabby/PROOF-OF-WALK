@@ -1,5 +1,5 @@
 // Proof of Walk — Farcaster Mini App (static, no framework)
-// DOMAIN: https://nurrabby.com
+// DOMAIN: https://proof-of-walk-ten.vercel.app/
 // PRIMARY_ROUTE: /
 //
 // IMPORTANT FIX:
