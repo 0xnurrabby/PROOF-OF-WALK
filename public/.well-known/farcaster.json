@@ -1,0 +1,17 @@
+{
+  "accountAssociation": {
+    "header": " ",
+    "payload": " ",
+    "signature": " "
+  },
+  "miniapp": {
+    "version": "1",
+    "name": "Proof of Walk",
+    "iconUrl": "https://nurrabby.com/assets/icon-1024.png",
+    "homeUrl": "https://nurrabby.com/",
+    "imageUrl": "https://nurrabby.com/assets/embed-3x2.png",
+    "buttonTitle": "Open",
+    "splashImageUrl": "https://nurrabby.com/assets/splash-200.png",
+    "splashBackgroundColor": "#000000"
+  }
+}
