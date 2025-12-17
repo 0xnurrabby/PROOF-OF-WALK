@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <title>Proof of Walk</title>
+
+  <meta name="fc:miniapp" content='{"version":"1","imageUrl":"https://nurrabby.com/assets/embed-3x2.png","button":{"title":"Start Walking","action":{"type":"launch_frame","name":"Proof of Walk","url":"https://nurrabby.com/","splashImageUrl":"https://nurrabby.com/assets/splash-200.png","splashBackgroundColor":"#000000"}}}' />
+  <meta name="fc:frame" content='{"version":"1","imageUrl":"https://nurrabby.com/assets/embed-3x2.png","button":{"title":"Start Walking","action":{"type":"launch_frame","name":"Proof of Walk","url":"https://nurrabby.com/","splashImageUrl":"https://nurrabby.com/assets/splash-200.png","splashBackgroundColor":"#000000"}}}' />
+
+  <meta name="description" content="Walk to mine blocks. Kinetic Hashpower. Tip in USDC on Base." />
+  <meta property="og:title" content="Proof of Walk" />
+  <meta property="og:description" content="Walk to mine blocks. Kinetic Hashpower." />
+  <meta property="og:image" content="https://nurrabby.com/assets/embed-3x2.png" />
+  <meta property="og:url" content="https://nurrabby.com/" />
+  <link rel="icon" href="https://nurrabby.com/assets/splash-200.png" />
+  <link rel="stylesheet" href="https://nurrabby.com/styles.css" />
+</head>
+<body>
+  <div id="app" class="shell" aria-label="Proof of Walk Mini App">
+    <header class="topbar">
+      <div class="brand">
+        <div class="logoBox">PoW</div>
+        <div class="brandTxt">
+          <div class="t1">PROOF OF WALK</div>
+          <div class="t2">Kinetic Hashpower • Base</div>
+        </div>
+      </div>
+      <button id="btnAdd" class="btn btnSmall" type="button">ADD</button>
+    </header>
+
+    <main class="screen">
+      <section class="panel">
+        <div class="row">
+          <div class="label">STATUS</div>
+          <div id="status" class="value">BOOTING…</div>
+        </div>
+
+        <div class="grid2">
+          <div class="stat">
+            <div class="label">STEPS</div>
+            <div id="steps" class="big">0</div>
+            <div class="hint">Shake/walk to count (motion). Tap + for manual steps.</div>
+            <div class="miniRow">
+              <button id="btnStep" class="btn" type="button">+ STEP</button>
+              <button id="btnReset" class="btn" type="button">RESET</button>
+            </div>
+          </div>
+
+          <div class="stat">
+            <div class="label">HASHRATE</div>
+            <div id="hashrate" class="big">0</div>
+            <div class="hint">Steps/min (last 30s). Stops → 0.</div>
+            <div class="miniRow">
+              <button id="btnStart" class="btn btnPrimary" type="button">CONFIRM: START WALKING</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="label">BLOCKS MINED</div>
+          <div id="blocks" class="value">0 / day</div>
+        </div>
+
+        <div class="barWrap" aria-label="Mining progress">
+          <div id="bar" class="bar"></div>
+        </div>
+
+        <div class="row">
+          <div class="label">DAILY TARGET</div>
+          <div class="value">1,000 steps = 1 block</div>
+        </div>
+
+        <div class="divider"></div>
+
+        <section class="stake">
+          <div class="row">
+            <div class="label">STAKE</div>
+            <div id="stakeState" class="value">SIM MODE</div>
+          </div>
+          <div class="hint">
+            This demo simulates the “stake & slash” mechanic client-side.
+            Production staking would store your commitment onchain and verify mined blocks via an oracle/attestation.
+          </div>
+        </section>
+      </section>
+
+      <section class="panel">
+        <div class="row">
+          <div class="label">TIP THE BUILDER</div>
+          <div class="value">USDC on Base</div>
+        </div>
+        <div class="hint">Bottom-sheet modal • Presets • Custom amount • ERC-5792 wallet_sendCalls.</div>
+        <button id="btnTip" class="btn btnPrimary" type="button">TIP</button>
+      </section>
+
+      <footer class="footer">
+        <div class="fine">No address bar in Mini App. If you see a browser UI, your embed/manifest is misconfigured.</div>
+      </footer>
+    </main>
+  </div>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <div id="sheetBack" class="sheetBack" hidden></div>
+  <div id="sheet" class="sheet" hidden aria-modal="true" role="dialog">
+    <div class="sheetTop">
+      <div class="sheetTitle">Send a tip (USDC)</div>
+      <button id="sheetClose" class="btn btnSmall" type="button">X</button>
+    </div>
+
+    <div class="sheetBody">
+      <div class="presetRow">
+        <button class="btn preset" data-usd="1" type="button">$1</button>
+        <button class="btn preset" data-usd="5" type="button">$5</button>
+        <button class="btn preset" data-usd="10" type="button">$10</button>
+        <button class="btn preset" data-usd="25" type="button">$25</button>
+      </div>
+
+      <label class="field">
+        <div class="label">CUSTOM</div>
+        <input id="customUsd" inputmode="decimal" placeholder="0.00" autocomplete="off" />
+      </label>
+
+      <div class="row">
+        <div class="label">RECIPIENT</div>
+        <div class="monoSm" id="recipient">0x8Bc0C8DB6e6b48cA38B4a8875C559E890f3Fc355</div>
+      </div>
+
+      <button id="tipCta" class="btn btnPrimary" type="button">Send USDC</button>
+
+      <div id="tipNote" class="hint tipNote">
+        Network: Base Mainnet (0x2105) • Token: USDC (6 decimals)
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@farcaster/miniapp-sdk/dist/index.min.js"></script>
+  <script type="module" src="https://nurrabby.com/app.js"></script>
+</body>
+</html>
